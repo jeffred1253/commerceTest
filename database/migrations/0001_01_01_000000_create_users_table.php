@@ -17,6 +17,10 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            // Champs prenant la valeur 'true' si l'utilisateur est un vendeur
+            $table->boolean('isVendor')->default(false);
+            // Champs de récupération de l'ID kkiapay du vendeur
+            $table->string('kkiapay_ID')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
